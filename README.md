@@ -1,102 +1,187 @@
-# 🚁 SwarmRL – Multi-Agent Deep Reinforcement Learning Simulator
+# SwarmRL – Multi-Agent Deep Reinforcement Learning Simulator 🚁
 
-SwarmRL is an advanced Multi-Agent Deep Reinforcement Learning project designed to simulate and train autonomous drone swarms for intelligent disaster-zone exploration.
+## Overview
 
-The system uses Multi-Agent Proximal Policy Optimization (MAPPO) to train multiple autonomous agents to collaborate, avoid collisions, explore unknown environments, and maximize collective search coverage.
+SwarmRL is a Multi-Agent Deep Reinforcement Learning project designed to simulate and visualize autonomous drone swarms for intelligent disaster-zone exploration and search-and-rescue operations.
 
-## 🎯 Project Objective
+The project focuses on coordinating multiple autonomous drones that work together to explore unknown environments, avoid collisions, distribute search tasks, and maximize overall exploration coverage.
 
-The primary objective is to develop an intelligent multi-agent system where multiple autonomous drones can:
+The proposed system uses Multi-Agent Proximal Policy Optimization (MAPPO) to enable intelligent cooperation and decentralized decision-making among multiple agents.
 
-- Explore disaster-affected areas collaboratively.
-- Avoid collisions with other drones.
-- Discover and cover unexplored regions.
-- Make decentralized movement decisions.
-- Maximize total search coverage efficiently.
+SwarmRL also provides an interactive Mission Control Dashboard to monitor drone activities, simulation status, exploration progress, and performance metrics.
 
-## 🧠 Key Features
+## Problem Statement
 
-- Multi-Agent Reinforcement Learning.
-- MAPPO (Multi-Agent Proximal Policy Optimization).
-- Decentralized drone decision-making.
-- Collision avoidance and reward optimization.
-- Distributed training using Ray RLlib.
-- Continuous 3D drone movement simulation.
-- Real-time drone position broadcasting.
-- Interactive 3D visualization.
-- Search coverage and collision analytics.
+During natural disasters such as earthquakes, floods, and landslides, searching large affected areas is challenging and time-consuming.
 
-## 🛠️ Technology Stack
+A single drone may have limited exploration capabilities. SwarmRL aims to address this challenge through a cooperative multi-agent system where multiple autonomous drones coordinate their movements and search activities efficiently.
 
-| Technology | Purpose |
-|---|---|
-| Python | Backend development |
-| PettingZoo | Multi-agent environment |
-| Ray RLlib | Distributed RL training |
-| PyTorch | Deep learning models |
-| MAPPO | Multi-agent learning algorithm |
-| React.js | Frontend development |
-| Three.js | 3D visualization |
-| WebSockets | Real-time communication |
+## Objectives
 
-## 🏗️ System Architecture
+- Develop a cooperative autonomous drone swarm system.
+- Enable intelligent decision-making among multiple agents.
+- Improve disaster-zone exploration and search coverage.
+- Minimize collisions between autonomous drones.
+- Optimize exploration efficiency using reinforcement learning.
+- Visualize swarm activities through a centralized dashboard.
 
-1. **Simulation Environment:** Creates a custom 3D environment for autonomous drones.
-2. **Reward Engineering:** Rewards exploration and penalizes collisions.
-3. **RL Training Engine:** Trains agents using MAPPO and Ray RLlib.
-4. **Communication Layer:** Broadcasts drone coordinates through WebSockets.
-5. **3D Visualization:** Displays drone movements and sensor coverage.
-6. **Analytics Dashboard:** Tracks explored area and collision statistics.
+## Key Features
 
-## 📅 Development Roadmap
+- **Multi-Agent Reinforcement Learning:** Supports the concept of cooperative learning among multiple autonomous agents.
+- **MAPPO Algorithm:** Uses MAPPO as the proposed approach for multi-agent coordination.
+- **Autonomous Exploration:** Focuses on intelligent exploration of unknown environments.
+- **Collision Avoidance:** Considers safe movement and collision reduction.
+- **Mission Control Dashboard:** Provides a centralized interface for monitoring swarm activities.
+- **Simulation Visualization:** Organizes simulation and environment-related information.
+- **Performance Analytics:** Tracks exploration and simulation-related metrics.
+- **Scalable Architecture:** Designed for future integration of additional agents and simulation capabilities.
 
-### Week 1 – Environment Setup
-- Develop the custom PettingZoo environment.
-- Define observation and continuous action spaces.
-- Set up the React and Three.js dashboard.
-- Render basic drone models.
+## Technology Stack
 
-### Week 2 – Reward Engineering
-- Implement exploration rewards.
-- Add collision penalties.
-- Develop the Python WebSocket server.
-- Broadcast real-time drone coordinates.
+### Frontend
+- Next.js
+- React.js
+- TypeScript
+- Tailwind CSS
+- Three.js
+- React Three Fiber
+- Recharts
+- Framer Motion
+- Lucide React
 
-### Mid-Project Review
-- Initiate initial reinforcement learning training.
-- Evaluate agent behavior and exploration.
-- Connect the 3D visualizer with the backend.
+### Planned Backend and AI Technologies
+- Python
+- PyTorch
+- Ray RLlib
+- PettingZoo
+- MAPPO
+- WebSockets
 
-### Week 3 – MAPPO Implementation
-- Implement Multi-Agent PPO.
-- Introduce centralized critic and decentralized actors.
-- Visualize drone sensor coverage.
+## System Architecture
 
-### Week 4 – Optimization and Finalization
-- Implement curriculum learning.
-- Introduce dynamic obstacles and wind resistance.
-- Add performance analytics.
-- Optimize the complete simulation.
+The proposed system consists of the following major components:
 
-## 📊 Performance Metrics
+1. **Simulation Environment:** Represents a disaster-affected area where autonomous drones perform exploration.
+2. **Autonomous Agents:** Individual drones responsible for searching and exploring different regions.
+3. **Reinforcement Learning Engine:** Uses a MAPPO-based approach for cooperative agent training.
+4. **Reward Mechanism:** Encourages exploration and penalizes collisions.
+5. **Communication Layer:** Supports information exchange between agents and the dashboard.
+6. **Visualization Dashboard:** Displays drone activities, simulation status, and performance information.
+7. **Analytics Module:** Evaluates exploration coverage, collisions, and coordination efficiency.
 
-The system will evaluate:
+## How MAPPO Works
 
-- Percentage of Map Explored.
-- Total Number of Collisions.
-- Exploration Efficiency.
-- Training Rewards.
-- Agent Coordination Performance.
+Multi-Agent Proximal Policy Optimization (MAPPO) is a reinforcement learning algorithm designed for multi-agent environments.
 
-## 🌍 Real-World Application
+The basic workflow includes:
 
-SwarmRL aims to demonstrate how autonomous drone swarms can support disaster response teams by searching large affected areas, identifying unexplored regions, and coordinating their movements intelligently.
+1. Each agent observes its surrounding environment.
+2. Agents select actions according to their policies.
+3. The environment updates agent positions and states.
+4. A reward mechanism evaluates agent behavior.
+5. The learning process improves agent policies through repeated training episodes.
 
-## 🚀 Project Status
+The proposed reward mechanism encourages exploration, efficient coverage, and cooperation while penalizing collisions and unnecessary movement.
 
-**Status:** Under Development
+## Project Structure
 
-This repository contains the source code, simulation environment, reinforcement learning implementation, and visualization components of SwarmRL.
+The repository contains the following major frontend directories:
+
+- `app/` – Application pages and routes.
+- `components/` – Reusable dashboard and interface components.
+- `hooks/` – Custom React hooks.
+- `lib/` – Application utilities and simulation-related logic.
+- `public/` – Static assets.
+
+## Installation and Setup
+
+### Prerequisites
+
+- Node.js
+- pnpm
+- Visual Studio Code
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/sagarkapoor03/SwarmRL-Multi-Agent-Deep-Reinforcement-Learning.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd "SwarmRL-Multi-Agent-Deep-Reinforcement-Learning/SwarmRL Project"
+```
+
+### 3. Install Dependencies
+
+```bash
+pnpm install
+```
+
+### 4. Start the Development Server
+
+```bash
+pnpm dev
+```
+
+### 5. Open in Browser
+
+Visit:
+
+http://localhost:3000
+
+### Production Build
+
+```bash
+pnpm build
+pnpm start
+```
+
+## Performance Metrics
+
+The proposed simulation focuses on the following evaluation metrics:
+
+- **Map Coverage:** Percentage of the search area explored.
+- **Active Agents:** Number of active autonomous drones.
+- **Collision Count:** Total collisions between agents.
+- **Exploration Efficiency:** Efficiency of search operations.
+- **Episode Reward:** Total reward obtained during training.
+- **Agent Coordination:** Effectiveness of cooperative decision-making.
+
+## Applications
+
+SwarmRL has potential applications in:
+
+- Disaster management and rescue operations.
+- Flood-affected area exploration.
+- Earthquake-damaged building inspection.
+- Forest monitoring and surveillance.
+- Autonomous robotics.
+- Multi-agent reinforcement learning research.
+
+## Future Scope
+
+- Implementation of a complete MAPPO training pipeline.
+- Integration of a multi-agent simulation backend.
+- Real-time communication between the backend and frontend.
+- Dynamic obstacles and environmental conditions.
+- Improved collision avoidance strategies.
+- Support for larger autonomous drone swarms.
+- Real-time drone-state visualization.
+- Model evaluation and performance optimization.
+
+## Project Status
+
+**Currently Under Development**
+
+The current repository contains the Next.js frontend application and dashboard-related structure. The complete reinforcement learning backend, MAPPO training pipeline, and live simulation integration are planned for future development.
+
+## Author
+
+**Sagar Kapoor**
+
+GitHub: https://github.com/sagarkapoor03
 
 ---
 
